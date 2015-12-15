@@ -10,6 +10,14 @@ class Heatmap:
         self.width = width
 
     def add_point(self, lat, long, weight=1, radius=0):
+        """
+        add point to map
+        :param lat:
+        :param long:
+        :param weight:
+        :param radius:
+        :return:
+        """
         lat = float(lat)
         long = float(long)
 
@@ -33,4 +41,8 @@ class Heatmap:
             return False
 
     def save(self, file):
+        """
+        render and export map to image file
+        :param file:
+        """
         scipy.misc.imsave(file, self.map)
